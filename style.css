@@ -1,0 +1,51 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+@import url("https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css?family=Geo&display=swap");
+:root {
+  --primary: #47cf73;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+#recovery-and-death {
+  font-family: "Geo";
+}
+
+#recovery-and-death blockquote, #recovery-and-death .info {
+  font-family: "Segoe UI", sans-serif;
+}
+
+#recovery-and-death .title {
+  font-size: calc(15px + 3vmin);
+  text-transform: uppercase;
+  opacity: 0.9;
+  color: var(--primary);
+  text-shadow: 0 0 2px var(--primary);
+}
+
+table thead {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+table thead th {
+  cursor: pointer;
+}
+
+table tr {
+  font-size: calc(10px + 2vmin);
+}
+/*# sourceMappingURL=style.css.map */

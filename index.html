@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Probability</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="recovery-and-death" class="container">
+      <h3 class="title text-center mt-4">
+        <span class="text-nowrap">Chance of death/recovery</span>
+        <span class="text-nowrap">from COVID-19 in India</span>
+      </h3>
+
+      <p class="text-center info">
+        <span class="text-nowrap"
+          >Based on
+          <a
+            href="https://en.wikipedia.org/wiki/Rule_of_succession"
+            target="_blank"
+            >Laplace's law of succession</a
+          ></span
+        >
+        <span class="text-nowrap">(with data of {{modifiedAt}})</span>
+      </p>
+
+      <div class="row">
+        <div class="col-md-4 ml-auto">
+          <select
+            name="state"
+            v-model="filterByKey"
+            class="form-control bg-light text-primary mb-2"
+          >
+            <option value="">Select state</option>
+            <option v-for="tr in records" :value="tr.state"
+              >{{tr.state}}</option
+            >
+          </select>
+        </div>
+      </div>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th
+              v-on:click="orderBy('state')"
+              v-bind:class="{ 'text-primary' : orderByKey == 'state'}"
+            >
+              State
+            </th>
+            <th
+              v-on:click="orderBy('cr')"
+              v-bind:class="{ 'text-success' : orderByKey == 'cr'}"
+            >
+              Chance of Recovery
+            </th>
+            <th
+              v-on:click="orderBy('cd')"
+              v-bind:class="{ 'text-danger' : orderByKey == 'cd'}"
+            >
+              Chance of Death
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="tr in td" :key="tr.state">
+            <th class="text-primary">{{tr.state}}</th>
+            <td class="text-success">{{tr.cr}}</td>
+            <td class="text-danger">{{tr.cd}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="./recovery-and-death.js"></script>
+  </body>
+</html>
