@@ -27,7 +27,7 @@ body {
 }
 
 #recovery-and-death .title {
-  font-size: calc(15px + 3vmin);
+  font-size: calc(10px + 3.5vmin);
   text-transform: uppercase;
   opacity: 0.9;
   color: var(--primary);
