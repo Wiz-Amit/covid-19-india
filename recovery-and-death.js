@@ -63,14 +63,16 @@ const app = new Vue({
         row.cr = row.cr.slice(row.cr.length - 4);
         row.cd = row.cd.slice(row.cd.length - 4);
       });
-      if (this.filterByKey)
+      if (this.filterByKey) {
         data = data.filter(row => row.state == this.filterByKey);
+      }
       return _.orderBy(data, this.orderByKey, "desc");
     }
   },
   methods: {
     orderBy: function(key) {
-      this.orderByKey = key;
+      if(this.orderByKey == key) this.orderByKey = "";
+      else this.orderByKey = key;
     }
   }
 });
