@@ -46,6 +46,10 @@ table thead th {
 }
 
 table tr {
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
+}
+
+table tr td {
+  font-size: calc(15px + 2vmin);
 }
 /*# sourceMappingURL=style.css.map */
