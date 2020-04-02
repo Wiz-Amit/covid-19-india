@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Probabilities of death and recovery from Coronavirus disease (COVID-19) if anyone gets infected.">
+    <meta
+      name="description"
+      content="Probabilities of death and recovery from Coronavirus disease (COVID-19) if anyone gets infected."
+    />
     <meta property="og:image" content="./assets/covid19-india-og.png" />
     <title>Probabilities of death and recovery from COVID-19</title>
     <link rel="stylesheet" href="./style.css" />
@@ -67,6 +70,7 @@
             </th>
             <th
               v-on:click="orderBy('cr')"
+              class="text-right"
               v-bind:class="{ 'text-success' : orderByKey == 'cr'}"
             >
               Chance of Recovery
@@ -82,13 +86,30 @@
         <tbody>
           <tr v-for="tr in td" :key="tr.state">
             <th class="text-primary">{{tr.state}}</th>
-            <td class="text-success">{{tr.cr}}</td>
-            <td class="text-danger">{{tr.cd}}</td>
+            <td class="text-success">
+              <span
+                class="bg-success"
+                v-bind:style="{width: window.innerWidth / 600 * tr.cr.replace('%', '') + 'px'}"
+              ></span
+              >{{tr.cr}}
+            </td>
+            <td class="text-danger">
+              <span
+                class="bg-danger"
+                v-bind:style="{width: window.innerWidth / 600 * tr.cd.replace('%', '') + 'px'}"
+              ></span
+              >{{tr.cd}}
+            </td>
           </tr>
         </tbody>
       </table>
       <p class="info text-center mt-4">
-        <a href="https://github.com/Wiz-Amit/covid-19-india" target="_blank" class="btn btn-outline-primary">View on Github</a>
+        <a
+          href="https://github.com/Wiz-Amit/covid-19-india"
+          target="_blank"
+          class="btn btn-outline-primary"
+          >View on Github</a
+        >
       </p>
     </div>
 
