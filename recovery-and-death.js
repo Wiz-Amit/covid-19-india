@@ -55,10 +55,10 @@ const app = new Vue({
       data.forEach(row => {
         row.cr =
           "00" +
-          Math.round(((row.recovered + 1) / (row.total + 2)) * 100) +
+          Math.round(((row.recovered + 1) / (row.recovered + row.deaths + 2)) * 100) +
           "%";
         row.cd =
-          "00" + Math.round(((row.deaths + 1) / (row.total + 2)) * 100) + "%";
+          "00" + Math.round(((row.deaths + 1) / (row.recovered + row.deaths + 2)) * 100) + "%";
 
         row.cr = row.cr.slice(row.cr.length - 4);
         row.cd = row.cd.slice(row.cd.length - 4);
