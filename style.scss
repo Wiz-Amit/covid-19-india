@@ -21,8 +21,9 @@ body {
 
 #recovery-and-death {
   font-family: "Geo";
-  
-  blockquote, .info {
+
+  blockquote,
+  .info {
     font-family: "Segoe UI", sans-serif;
   }
 
@@ -35,7 +36,7 @@ body {
 }
 
 table {
-  thead{
+  thead {
     user-select: none;
     th {
       cursor: pointer;
@@ -45,6 +46,33 @@ table {
     font-size: calc(12px + 2vmin);
     td {
       font-size: calc(15px + 2vmin);
+      position: relative;
+
+      & > span {
+        content: "";
+        display: block;
+        height: 5px;
+        position: absolute;
+        bottom: 0;
+      }
+
+      &:last-of-type {
+        text-align: left;
+
+        & > span {
+          left: 0;
+          width: 100px;
+        }
+      }
+
+      &:first-of-type {
+        text-align: right;
+
+        & > span {
+          right: 0;
+          width: calc(200*0.97px);
+        }
+      }
     }
   }
 }
