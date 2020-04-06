@@ -1,7 +1,7 @@
 const app = new Vue({
   el: "#recovery-and-death",
   data: {
-    modifiedAt: "April 2nd 2020",
+    modifiedAt: "April 5th 2020",
     orderByKey: "cr",
     filterByKey: "",
     records: []
