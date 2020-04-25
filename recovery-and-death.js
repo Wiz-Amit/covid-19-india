@@ -9,7 +9,7 @@ const app = new Vue({
     fetch("https://api.covid19india.org/data.json")
       .then((response) => response.json())
       .then((json) => {
-        console.table(json.statewise);
+        // console.table(json.statewise);
         this.records = json.statewise.filter(record => record.state !== 'Total');
       });
   },
