@@ -23,7 +23,6 @@ const app = new Vue({
   computed: {
     td: function () {
       let data = this.records;
-
       data.forEach((row) => {
         row.cr =
           '00' +
